@@ -1,26 +1,17 @@
-
 from collections import Counter
 
-
-product_count = Counter()
+word_count = Counter()
 
 with open('input.txt', encoding='utf-8') as input_file:
-    print(input_file.read())
+    for line in input_file:
+        words = line.split(' ')
+        word_count.update(words)
+        print(word_count)
 
-    for line in csvFile:
-        buyer = line['Vevő neve']
-        products = line['Vásárolt termékek'].split(',')
-        price = float(line['Ár'])
-        print(line)
-        for product in products:
-            product_count[product] += 1
+most_common_words = word_count.most_common(3)
 
-        buyer_spending[buyer] += price
+for word in most_common_words:
+    with open('output.txt', 'w', encoding='utf-8') as output_file:
+        output_file.write(f'{most_common_words}')
 
-most_purchased_product = product_count.most_common(1)[0]
-print(most_purchased_product)
-print(f"The most purchased product:{most_purchased_product[0]}, amount: {most_purchased_product[1]}")
 
-highest_spending_buyer = max(buyer_spending.items(), key=lambda x: x[1])
-print(highest_spending_buyer)
-print(f"The customer who buys the highest amount: {highest_spending_buyer[0]}, amount: {highest_spending_buyer[1]} Ft")

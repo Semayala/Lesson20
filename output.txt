@@ -1,0 +1,1 @@
+[('\n', 3), ('Palacsinta recept\n', 1), ('Hozzávalók:\n', 1)]
