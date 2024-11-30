@@ -1,1 +1,3 @@
-[('\n', 3), ('Palacsinta recept\n', 1), ('Hozzávalók:\n', 1)]
+csipet: 2
+evőkanál: 2
+keverd: 2
